@@ -45,14 +45,13 @@ main {
       padding: 4rem; } }
   @media (min-width: 45em) {
     .product {
-      padding: 4rem;
+      padding: 2rem 4rem;
       display: flex;
       flex-direction: column;
       justify-content: space-around; } }
   .product-img img {
     display: block;
     max-inline-size: 100%;
-    block-size: auto;
     object-fit: cover; }
   .product-type {
     display: inline-block;
@@ -62,9 +61,6 @@ main {
     @media (min-width: 31.25em) {
       .product-type {
         font-size: 1.3rem; } }
-    @media (min-width: 45em) {
-      .product-type {
-        font-size: 1.5rem; } }
   .product-title {
     color: #1c232b;
     font-size: 2.8rem;
@@ -74,13 +70,18 @@ main {
     @media (min-width: 31.25em) {
       .product-title {
         font-size: 3rem; } }
-    @media (min-width: 45em) {
+    @media (min-width: 56.25em) {
       .product-title {
-        font-size: 3.2rem; } }
+        margin-top: 0;
+        margin-bottom: 0; } }
   .product-description {
     display: block;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem; }
+    @media (min-width: 56.25em) {
+      .product-description {
+        margin-top: 0;
+        margin-bottom: 0; } }
   .product-price-box {
     display: flex;
     align-items: center;
@@ -94,9 +95,6 @@ main {
     @media (min-width: 31.25em) {
       .product-price {
         font-size: 3rem; } }
-    @media (min-width: 45em) {
-      .product-price {
-        font-size: 3.2rem; } }
   .product-price-old {
     text-decoration: line-through; }
   .product-btn {
@@ -118,6 +116,10 @@ main {
       .product-btn {
         font-size: 1.6rem;
         gap: 2rem; } }
+    @media (min-width: 56.25em) {
+      .product-btn {
+        margin-top: 0;
+        margin-bottom: 0; } }
     .product-btn:hover {
       cursor: pointer;
       background-color: #244c3d; }
