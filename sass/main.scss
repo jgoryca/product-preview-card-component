@@ -1,3 +1,21 @@
+$color-primary: hsl(158, 36%, 37%);
+$color-secondary: hsl(30, 38%, 92%);
+
+$color-dark-grey: hsl(212, 21%, 14%);
+$color-light-grey: hsl(228, 12%, 48%);
+$color-white: hsl(0, 0%, 100%);
+
+//RESPONSIVE BREAKPOINTS
+
+$bp-large: 56.25em; //900px
+$bp-medium: 45em; //720px
+$bp-small: 31.25em; //500px
+
+@mixin style-margin($margin) {
+  margin-top: $margin;
+  margin-bottom: $margin;
+}
+
 *,
 *::before,
 *::after {
@@ -12,8 +30,144 @@ html {
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 400;
+  font-family: "Montserrat", serif;
+  font-weight: 500;
   line-height: 1.6;
-  min-height: 100vh;
+  padding: 3.5rem 2rem;
+  background-color: $color-secondary;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  background-color: $color-white;
+  font-size: 1.4rem;
+  color: $color-light-grey;
+  border-radius: 10px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media (min-width: $bp-small) {
+    font-size: 1.6rem;
+  }
+
+  @media (min-width: $bp-medium) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: $bp-large) {
+    max-width: 700px;
+  }
+}
+
+.product {
+  padding: 2rem;
+
+  @media (min-width: $bp-small) {
+    padding: 4rem;
+  }
+
+  @media (min-width: $bp-medium) {
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  &-img img {
+    display: block;
+    max-inline-size: 100%;
+    block-size: auto;
+    object-fit: cover;
+  }
+
+  &-type {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    letter-spacing: 0.4rem;
+
+    @media (min-width: $bp-small) {
+      font-size: 1.3rem;
+    }
+
+    @media (min-width: $bp-medium) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &-title {
+    color: $color-dark-grey;
+    font-size: 2.8rem;
+    line-height: 1;
+    @include style-margin(1.5rem);
+
+    @media (min-width: $bp-small) {
+      font-size: 3rem;
+    }
+
+    @media (min-width: $bp-medium) {
+      font-size: 3.2rem;
+    }
+  }
+
+  &-description {
+    display: block;
+    @include style-margin(1.5rem);
+  }
+
+  &-price-box {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  &-price {
+    display: inline-block;
+    font-family: "Fraunces", serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: $color-primary;
+
+    @media (min-width: $bp-small) {
+      font-size: 3rem;
+    }
+
+    @media (min-width: $bp-medium) {
+      font-size: 3.2rem;
+    }
+  }
+
+  &-price-old {
+    text-decoration: line-through;
+  }
+
+  &-btn {
+    width: 100%;
+    padding: 1.5rem;
+    background-color: $color-primary;
+    border-radius: 10px;
+    border: none;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: $color-white;
+    @include style-margin(1.5rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    @media (min-width: $bp-small) {
+      font-size: 1.6rem;
+      gap: 2rem;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: darken($color-primary, 15%);
+    }
+  }
 }
